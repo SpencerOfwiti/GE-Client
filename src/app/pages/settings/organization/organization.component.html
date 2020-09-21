@@ -1,0 +1,52 @@
+<!-- Begin page -->
+<div class="wrapper">
+  <app-sidebar></app-sidebar>
+
+  <!-- ============================================================== -->
+  <!-- Start Page Content here -->
+  <!-- ============================================================== -->
+
+  <div id="content">
+    <app-topbar></app-topbar>
+    <!-- Start Content-->
+    <div class="container-fluid" appMenuSelection>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header text-center">
+            DEFAULT ORGANISATION SETTINGS
+          </div>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <label for="amount">Default Disbursement *</label>
+                <div class="form-inline">
+                  <input type="text" class="form-control" id="amount">
+                  <label class="ml-2">RCU</label>
+                </div>
+              </div>
+              <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="transferCard">
+                <label class="form-check-label" for="transferCard">Require Transfer Card *</label>
+              </div>
+              <div class="form-group">
+                <label for="countryCode">Default Country Code *</label>
+                <select class="form-control" id="countryCode">
+                  <option>KE Kenya</option>
+                  <option>US United States</option>
+                  <option>ETH Ethiopia</option>
+                  <option>GER Germany</option>
+                  <option>UG Uganda</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <app-footer appMenuSelection></app-footer>
+  </div>
+  <!-- ============================================================== -->
+  <!-- End Page content -->
+  <!-- ============================================================== -->
+</div>

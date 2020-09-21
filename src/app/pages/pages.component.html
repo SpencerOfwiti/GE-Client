@@ -1,0 +1,99 @@
+<!-- Begin page -->
+<div class="wrapper">
+  <app-sidebar></app-sidebar>
+
+  <!-- ============================================================== -->
+  <!-- Start Page Content here -->
+  <!-- ============================================================== -->
+
+  <div id="content">
+    <app-topbar></app-topbar>
+    <!-- Start Content-->
+    <div class="container-fluid" appMenuSelection>
+      <div class="card col-12">
+        <div class="card-header">
+          <form class="form-inline">
+            <div class="form-group">
+              <label for="filterUser">Filter by user : </label>
+              <select class="form-control ml-2" id="filterUser">
+                <option>SELECT ATTRIBUTE</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div class="form-group ml-auto">
+              <input type="text" class="form-control" id="filterDate">
+            </div>
+            <button type="submit" class="btn btn-outline-secondary ml-2">FILTER</button>
+          </form>
+        </div>
+        <div class="row">
+          <div class="card col-md-8">
+            <div class="card-body">
+              <div style="display: block">
+                <canvas baseChart
+                        [datasets]="lineChartData"
+                        [labels]="lineChartLabels"
+                        [options]="lineChartOptions"
+                        [colors]="lineChartColors"
+                        [legend]="lineChartLegend"
+                        [chartType]="lineChartType"
+                        (chartHover)="chartHovered($event)"
+                        (chartClick)="chartClicked($event)">
+                </canvas>
+              </div>
+            </div>
+            <hr>
+            <div class="card-body row">
+              <div class="col-md-3 text-center">
+                <h4>MASTER WALLET BALANCE</h4>
+                <p>0 RCU</p>
+              </div>
+              <div class="col-md-3 text-center">
+                <h4>TOTAL DISTRIBUTED</h4>
+                <p>153 RCU</p>
+              </div>
+              <div class="col-md-3 text-center">
+                <h4>TOTAL SPENT</h4>
+                <p>0 RCU</p>
+              </div>
+              <div class="col-md-3 text-center">
+                <h4>TOTAL EXCHANGED</h4>
+                <p>0 RCU</p>
+              </div>
+            </div>
+            <hr>
+            <div class="card-body">
+              <div style="display: block">
+                <canvas baseChart
+                        [datasets]="barChartData"
+                        [labels]="barChartLabels"
+                        [options]="barChartOptions"
+                        [legend]="barChartLegend"
+                        [chartType]="barChartType">
+                </canvas>
+              </div>
+            </div>
+          </div>
+          <div class="card col-md-4">
+            <div class="card-body text-center">
+              <h4>TRANSFER USAGES</h4>
+              <p>Transfer Usages Will Appear Here</p>
+            </div>
+            <hr>
+            <div class="card-body">
+              <h4 class="text-center">PARTNER LIVE FEED</h4>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <app-footer appMenuSelection></app-footer>
+  </div>
+  <!-- ============================================================== -->
+  <!-- End Page content -->
+  <!-- ============================================================== -->
+</div>

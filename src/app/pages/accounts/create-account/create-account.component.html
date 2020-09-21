@@ -1,0 +1,91 @@
+<!-- Begin page -->
+<div class="wrapper">
+  <app-sidebar></app-sidebar>
+
+  <!-- ============================================================== -->
+  <!-- Start Page Content here -->
+  <!-- ============================================================== -->
+
+  <div id="content">
+    <app-topbar></app-topbar>
+    <!-- Start Content-->
+    <div class="container-fluid" appMenuSelection>
+      <div class="card">
+        <div class="card-header text-center">
+          CREATE A USER ACCOUNT
+        </div>
+        <div class="card-body">
+          <form class="col-lg-4 col-md-6">
+            <div class="form-group">
+              <label for="accountType">Account Type: </label>
+              <select class="form-control" id="accountType">
+                <option>USER</option>
+                <option>CASHIER</option>
+                <option>VENDOR</option>
+                <option>TOKENAGENT</option>
+                <option>GROUPACCOUNT</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="idNumber">ID Number: </label>
+              <input type="text" class="form-control" id="idNumber">
+            </div>
+            <h5> or </h5>
+            <div class="form-group">
+              <label for="phoneNumber">Phone Number: </label>
+              <input type="text" class="form-control" id="phoneNumber">
+            </div>
+            <div class="form-group">
+              <label for="givenNames">Given Name(s):* </label>
+              <input type="text" class="form-control" id="givenNames">
+            </div>
+            <div class="form-group">
+              <label for="surname">Family/Surname: </label>
+              <input type="text" class="form-control" id="surname">
+            </div>
+            <div class="form-group">
+              <label for="directoryEntry">Directory Entry: </label>
+              <input type="text" class="form-control" id="directoryEntry">
+            </div>
+            <div class="form-group">
+              <label for="location">Location: </label>
+              <input type="text" class="form-control" id="location">
+            </div>
+            <div class="form-group">
+              <label for="gender">Gender: </label>
+              <select class="form-control" id="gender">
+                <option>FEMALE</option>
+                <option>MALE</option>
+                <option>OTHER</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="referredBy">Referred by User Phone Number: </label>
+              <input type="text" class="form-control" id="referredBy">
+            </div>
+            <div class="form-group">
+              <label for="businessCategory">Business Category: </label>
+              <select class="form-control" id="businessCategory">
+                <option>Food/Water</option>
+                <option>Fuel/Energy</option>
+                <option>Education</option>
+                <option>Health</option>
+                <option>Shop</option>
+                <option>Environment</option>
+                <option>Transport</option>
+                <option>Farming/Labour</option>
+                <option>Savings Group</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-outline-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <app-footer appMenuSelection></app-footer>
+  </div>
+  <!-- ============================================================== -->
+  <!-- End Page content -->
+  <!-- ============================================================== -->
+</div>

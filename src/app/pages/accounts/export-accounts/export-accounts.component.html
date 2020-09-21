@@ -1,0 +1,45 @@
+<!-- Begin page -->
+<div class="wrapper">
+  <app-sidebar></app-sidebar>
+
+  <!-- ============================================================== -->
+  <!-- Start Page Content here -->
+  <!-- ============================================================== -->
+
+  <div id="content">
+    <app-topbar></app-topbar>
+    <!-- Start Content-->
+    <div class="container-fluid" appMenuSelection>
+      <div class="card">
+        <div class="card-header">
+          <strong>EXPORT ACCOUNTS</strong>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="form-inline mb-3">
+              <div class="form-group">
+                <label for="accountType" class="mr-3">Export : </label>
+                <select class="form-control" id="accountType">
+                  <option>VENDORS</option>
+                  <option>PARTNERS</option>
+                  <option>SELECTED</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-inline mb-3">
+              <div class="form-group form-check">
+                <label class="form-check-label mr-2" for="transfers">Include transfers?</label>
+                <input type="checkbox" class="form-check-input" id="transfers">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-outline-primary"> EXPORT </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <app-footer appMenuSelection></app-footer>
+  </div>
+  <!-- ============================================================== -->
+  <!-- End Page content -->
+  <!-- ============================================================== -->
+</div>

@@ -1,0 +1,51 @@
+<!-- Begin page -->
+<div class="wrapper">
+  <app-sidebar></app-sidebar>
+
+  <!-- ============================================================== -->
+  <!-- Start Page Content here -->
+  <!-- ============================================================== -->
+
+  <div id="content">
+    <app-topbar></app-topbar>
+    <!-- Start Content-->
+    <div class="container-fluid" appMenuSelection>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header text-center">
+            INVITE NEW USERS
+          </div>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <label for="email">Enter the email address of the users you'd like to invite and choose the role they should have.</label>
+                <input type="email" class="form-control" id="email" placeholder="Email">
+              </div>
+              <div class="form-group form-check">
+                <input type="radio" class="form-check-input" name="radio" id="radio1" value="Superadmin">
+                <label class="form-check-label" for="radio1">Superadmin</label>
+              </div>
+              <div class="form-group form-check">
+                <input type="radio" class="form-check-input" name="radio" id="radio2" value="Admin">
+                <label class="form-check-label" for="radio2">Admin</label>
+              </div>
+              <div class="form-group form-check">
+                <input type="radio" class="form-check-input" name="radio" id="radio3" value="Subadmin">
+                <label class="form-check-label" for="radio3">Subadmin</label>
+              </div>
+              <div class="form-group form-check">
+                <input type="radio" class="form-check-input" name="radio" id="radio4" value="View" checked>
+                <label class="form-check-label" for="radio4">View</label>
+              </div>
+              <button type="submit" class="btn btn-outline-primary">INVITE</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <app-footer appMenuSelection></app-footer>
+  </div>
+  <!-- ============================================================== -->
+  <!-- End Page content -->
+  <!-- ============================================================== -->
+</div>

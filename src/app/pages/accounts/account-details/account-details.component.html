@@ -1,0 +1,238 @@
+<!-- Begin page -->
+<div class="wrapper">
+  <app-sidebar></app-sidebar>
+
+  <!-- ============================================================== -->
+  <!-- Start Page Content here -->
+  <!-- ============================================================== -->
+
+  <div id="content">
+    <app-topbar></app-topbar>
+    <!-- Start Content-->
+    <div class="container-fluid" appMenuSelection>
+      <div class="card mb-3">
+        <div class="row card-body">
+          <p><i class="fa fa-user rounded"></i><strong> USER </strong></p>
+          <p class="ml-auto">Balance 0.48 RCU</p>
+          <p class="ml-2">Created {{date}}</p>
+          <p class="ml-2">Address {{time}}</p>
+        </div>
+      </div>
+      <app-disbursement *ngIf="isDisbursing"></app-disbursement>
+      <div class="card mt-3 mb-3">
+        <div class="card-header">
+          <div class="row">
+            DETAILS
+            <button type="button" class="btn btn-outline-secondary ml-auto" (click)="addTransfer()"> NEW TRANSFER </button>
+            <button type="button" class="btn btn-outline-secondary ml-2"> SAVE </button>
+          </div>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="row form-inline">
+              <div class="col-12">
+                <div class="form-group">
+                  <label for="status" class="mr-3">Status : </label>
+                  <select class="form-control" id="status">
+                    <option>Unapproved</option>
+                    <option>Approved</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row form-inline">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="startDate" class="mr-3">Payment Cycle Start Date : </label>
+                  <input type="text" class="form-control" id="startDate" placeholder="{{date}}">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="paymentCycle" class="mr-3">Payment Cycle : </label>
+                  <select class="form-control" id="paymentCycle">
+                    <option>Weekly</option>
+                    <option>Daily</option>
+                    <option>Monthly</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="card mb-3">
+        <div class="card-header">
+          USERS
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover">
+              <caption> 1 user </caption>
+              <thead class="thead-dark">
+              <tr>
+                <th scope="col">NAME</th>
+                <th scope="col">ACCOUNT TYPE</th>
+                <th scope="col">CREATED</th>
+                <th scope="col">STATUS</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>User Name</td>
+                <td></td>
+                <td></td>
+                <td><span class="badge badge-primary badge-pill">UNACTIVATED</span></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="row">
+            <div class="form-group">
+              <select class="form-control" id="transferSelect">
+                <option selected>ALL TRANSFERS</option>
+                <option>PAYMENTS</option>
+                <option>EXCHANGE</option>
+                <option>DISBURSEMENT</option>
+                <option>RECLAMATION</option>>
+              </select>
+            </div>
+            <p *ngIf="numberChecked > 0" class="ml-auto mr-3"><strong> {{numberChecked}} selected </strong></p>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-striped table-bordered table-hover row-border hover">
+              <thead class="thead-dark">
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">First name</th>
+                <th scope="col">Last name</th>
+                <th scope="col">First name</th>
+                <th scope="col">Last name</th>
+                <th scope="col"><input type="checkbox" name="accountsCheck" [checked]="isChecked" (click)="checkUncheckAll()"></th>
+              </tr>
+              </thead>
+              <tfoot class="thead-dark">
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">First name</th>
+                <th scope="col">Last name</th>
+                <th scope="col">First name</th>
+                <th scope="col">Last name</th>
+                <th scope="col"><input type="checkbox" name="accountsCheck" [checked]="isChecked" (click)="checkUncheckAll()"></th>
+              </tr>
+              </tfoot>
+              <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td routerLink="/accounts/1">Foo</td>
+                <td routerLink="/accounts/1">Bar</td>
+                <td routerLink="/accounts/1">Foo</td>
+                <td routerLink="/accounts/1">Bar</td>
+                <td><input type="checkbox" name="accountsCheck" [checked]="isChecked" (change)="countChecked($event)"></td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Someone</td>
+                <td>Youknow</td>
+                <td>Someone</td>
+                <td>Youknow</td>
+                <td><input type="checkbox" name="accountsCheck" [checked]="isChecked" (change)="countChecked($event)"></td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Iamout</td>
+                <td>Ofinspiration</td>
+                <td>Iamout</td>
+                <td>Ofinspiration</td>
+                <td><input type="checkbox" name="accountsCheck" [checked]="isChecked" (change)="countChecked($event)"></td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>Yoda</td>
+                <td>Skywalker</td>
+                <td>Yoda</td>
+                <td>Skywalker</td>
+                <td><input type="checkbox" name="accountsCheck" [checked]="isChecked" (change)="countChecked($event)"></td>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <td>Patrick</td>
+                <td>Dupont</td>
+                <td>Patrick</td>
+                <td>Dupont</td>
+                <td><input type="checkbox" name="accountsCheck" [checked]="isChecked" (change)="countChecked($event)"></td>
+              </tr>
+              <tr>
+                <th scope="row">6</th>
+                <td>Barack</td>
+                <td>Obama</td>
+                <td>Barack</td>
+                <td>Obama</td>
+                <td><input type="checkbox" name="accountsCheck" [checked]="isChecked" (change)="countChecked($event)"></td>
+              </tr>
+              <tr>
+                <th scope="row">7</th>
+                <td>François</td>
+                <td>Holland</td>
+                <td>François</td>
+                <td>Holland</td>
+                <td><input type="checkbox" name="accountsCheck" [checked]="isChecked" (change)="countChecked($event)"></td>
+              </tr>
+              <tr>
+                <th scope="row">8</th>
+                <td>Michel</td>
+                <td>Popo</td>
+                <td>Michel</td>
+                <td>Popo</td>
+                <td><input type="checkbox" name="accountsCheck" [checked]="isChecked" (change)="countChecked($event)"></td>
+              </tr>
+              <tr>
+                <th scope="row">9</th>
+                <td>Chuck</td>
+                <td>Norris</td>
+                <td>Chuck</td>
+                <td>Norris</td>
+                <td><input type="checkbox" name="accountsCheck" [checked]="isChecked" (change)="countChecked($event)"></td>
+              </tr>
+              <tr>
+                <th scope="row">10</th>
+                <td>Simon</td>
+                <td>Robin</td>
+                <td>Simon</td>
+                <td>Robin</td>
+                <td><input type="checkbox" name="accountsCheck" [checked]="isChecked" (change)="countChecked($event)"></td>
+              </tr>
+              <tr>
+                <th scope="row">11</th>
+                <td>Louis</td>
+                <td>Lin</td>
+                <td>Louis</td>
+                <td>Lin</td>
+                <td><input type="checkbox" name="accountsCheck" [checked]="isChecked" (change)="countChecked($event)"></td>
+              </tr>
+              <tr>
+                <th scope="row">12</th>
+                <td>Zelda</td>
+                <td>Link</td>
+                <td>Zelda</td>
+                <td>Link</td>
+                <td><input type="checkbox" name="accountsCheck" [checked]="isChecked" (change)="countChecked($event)"></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <app-footer appMenuSelection></app-footer>
+  </div>
+  <!-- ============================================================== -->
+  <!-- End Page content -->
+  <!-- ============================================================== -->
+</div>
